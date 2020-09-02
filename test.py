@@ -20,12 +20,12 @@ def read():
             data_read = websocket.recv()
             y = ujson.loads(data_read)
             print(y['message'])
-        mem = gc.mem_alloc() # Return the number of bytes of heap RAM that are allocated.
-        free = gc.mem_free() # Return the number of bytes of available heap RAM, or -1 if this amount is not known.
-        print("> mem-alloc: {}, mem-free: {}".format(mem, free))
+        #mem = gc.mem_alloc() # Return the number of bytes of heap RAM that are allocated.
+        #free = gc.mem_free() # Return the number of bytes of available heap RAM, or -1 if this amount is not known.
+        #print("> mem-alloc: {}, mem-free: {}".format(mem, free))
         flag_adc = True
     except:
-        print("Error in Send")
+        print("websocket not connected")
         raise
 
 def loop_read_ws(e):
@@ -42,9 +42,9 @@ def loop_read_adc(e):
         if flag_adc == True:
             n = adc.read()
             print(n)
-            mem = gc.mem_alloc() # Return the number of bytes of heap RAM that are allocated.
-            free = gc.mem_free() # Return the number of bytes of available heap RAM, or -1 if this amount is not known.
-            print("> mem-alloc: {}, mem-free: {}".format(mem, free))
+            #mem = gc.mem_alloc() # Return the number of bytes of heap RAM that are allocated.
+            #free = gc.mem_free() # Return the number of bytes of available heap RAM, or -1 if this amount is not known.
+            #print("> mem-alloc: {}, mem-free: {}".format(mem, free))
             time.sleep(e)
             gc.collect()
 
