@@ -8,9 +8,9 @@ The idea is to connect a led strip to the esp32 board and manually read 3 potent
 * rshell -p /dev/ttyUSB0 (linux)
 * rsync . /pyboard
 
-@Dave Hylands
+@danni
 https://github.com/dhylands/rshell
 
 # Library uwebsockets:
-@Danielle Madeley
+@dhylands
 https://github.com/danni/uwebsockets
